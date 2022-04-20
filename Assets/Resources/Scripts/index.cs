@@ -28,7 +28,8 @@ public class index : MonoBehaviour
             Speed += 0.02f;
             LastChangeSpeed = Time.time;
         }
-        Score += 1 * Mathf.RoundToInt(Speed);
+        int newScore = 1 * Mathf.RoundToInt(Speed);
+        Score += newScore == 0 ? 1 : newScore;
         TextScore.text = "Score: " + Score; 
     }
     public void GameOver(GameObject OtherGameObject, GameObject Capsule)
